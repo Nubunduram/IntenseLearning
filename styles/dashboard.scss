@@ -4,6 +4,7 @@
 
 .dashboard {
     overflow: hidden;
+    position: relative;
 
     .filter-bar {
         background-color: $dark-orange;
@@ -86,6 +87,10 @@
         }
     }
 
+    .post-it-section>div {
+        box-shadow: $box-shadow-default;
+    }
+
     .post-it-section {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -156,11 +161,13 @@
             background-color: $dark-yellow;
             padding: 16px;
 
+
             .statut {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 padding: 32px 0;
+
 
                 div {
                     display: flex;
@@ -178,4 +185,25 @@
             }
         }
     }
+
+    .leaderboard {
+        display: grid;
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 5fr));
+
+            .etudiant {
+                img {
+                    width: 36px;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: auto;
+    padding: 24px 80px;
+    text-align: center;
 }
