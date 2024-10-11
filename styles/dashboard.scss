@@ -1,0 +1,181 @@
+@import './variable.scss';
+@import './mixin.scss';
+@import './base.scss';
+
+.dashboard {
+    overflow: hidden;
+
+    .filter-bar {
+        background-color: $dark-orange;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        padding: 0 10px;
+        box-shadow: $box-shadow-default;
+
+        font-weight: 600;
+
+        li {
+            cursor: pointer;
+            padding: 16px 0;
+            border-bottom: solid 2px $dark-orange;
+
+            a {
+                display: flex;
+                gap: 4px;
+
+                span:nth-child(2) {
+                    @include grid-item-center;
+                    height: 18px;
+                    width: fit-content;
+                    padding: 0 5.5px;
+                    border-radius: 50px;
+                    font-size: 0.75rem;
+                    background-color: $dark-yellow;
+                }
+            }
+        }
+
+        li:nth-child(1) {
+            border-bottom: solid 2px black;
+        }
+
+        li:hover {
+            border-bottom: solid 2px black;
+        }
+    }
+
+    .users-stats {
+        display: flex;
+        gap: 16px;
+        overflow: auto;
+        white-space: nowrap;
+        padding-right: 8px;
+        padding-bottom: 16px;
+
+
+
+        .card {
+            box-shadow: $box-shadow-default;
+            background-color: $light-yellow;
+            padding: 16px;
+            font-size: 0.9rem;
+            width: 100%;
+
+            h3 {
+                padding-bottom: 8px;
+            }
+
+            .users-numbers {
+                display: flex;
+                justify-content: space-between;
+                gap: 8px;
+
+                .flat {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+
+                .percentage {
+                    @include grid-item-center;
+                    background-color: $white;
+                    padding: 0 12px;
+                    border-radius: 12px;
+                }
+            }
+        }
+    }
+
+    .post-it-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 16px;
+        width: 100%;
+
+        img {
+            max-width: 330px;
+            width: 100%;
+            margin: auto;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .reward-post-it {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+
+            background-color: $green;
+            padding: 16px;
+
+            .text-info {
+                display: flex;
+                gap: 16px;
+
+                span {
+                    position: relative;
+                    padding-left: 22px;
+                }
+            }
+
+            .text-info>span::before {
+                content: '';
+                position: absolute;
+                left: 0px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 16px;
+                height: 16px;
+                background-color: $white;
+                border-radius: 50%;
+            }
+
+            .text-info>span:nth-child(1)::before {
+                background-color: $dark-orange;
+            }
+        }
+
+        .challenges-post-it {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            background-color: $blue;
+            padding: 16px;
+        }
+
+        .statut-post-it {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            background-color: $dark-yellow;
+            padding: 16px;
+
+            .statut {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 32px 0;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    width: min-content;
+                }
+
+                .statut-actuel {
+                    width: 180px;
+                    font-size: 1.125rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
